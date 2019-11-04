@@ -1,3 +1,44 @@
-* {
-    box-sizing: border-box;
+
+
+  h1{
+    background: orange;
+    padding: 10px 2px;
+    color: white;
+    width: 600px;
+    font-size: 40px;
+
   }
+
+#instructions{
+  width: 800px;
+  height: 500px;
+  color: green;
+  background:beige;
+  font-size: 25px;
+}
+#randomNumber{
+display: inline-block;
+  width: 150px;
+ 
+  background: teal;
+  padding: 5%;
+}
+#winLose{
+  display: inline-block;
+  font: black;
+  width: 100px;
+  background: blue;
+  padding: 5%;
+}
+#totalScore {
+  color: white;
+  background: lightblue;
+  width: 155px;
+  padding: 1%;
+}
+#scoreTotal  {
+  color: white;
+  background: lightblue;
+  width: 155px;
+  padding: 5%;
+}
