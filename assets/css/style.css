@@ -1,44 +1,111 @@
 
-
+#gameHeader{
+  width: auto;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
   h1{
     background: orange;
     padding: 10px 2px;
     color: white;
-    width: 600px;
+text-align: center;
     font-size: 40px;
+    
 
   }
 
 #instructions{
-  width: 800px;
-  height: 500px;
+  width: auto;
+  height: 260px;
   color: green;
   background:beige;
   font-size: 25px;
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-#randomNumber{
-display: inline-block;
+#randomNumberText{
+  margin-left: 650px;
   width: 150px;
- 
-  background: teal;
-  padding: 5%;
+  padding: 10px 5px;
+  font-size: 20px;
+  background: cornflowerblue;
+  text-align: center;
 }
-#winLose{
-  display: inline-block;
-  font: black;
+#randomNumberDisplayed1{
+  margin-left: 650px;
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 40px;
+  text-align: center;
+  background: cornflowerblue;
+
+}
+.gemImageClass{
   width: 100px;
-  background: blue;
-  padding: 5%;
+  height: 100px;
+  border: 5px solid black;
+  margin-left: 10px;
+  
+  }
+  #gems{
+    margin-left: 500px;
+  }
+
+  #totalScore {
+    margin-left: 650px;
+    width: 150px;
+    padding: 10px 5px;
+    font-size: 20px;
+    background: cornflowerblue;
+    text-align: center;
+  }
+  #scoreTotal  {
+    margin-left: 650px;
+    width: 150px;
+    padding: 10px 5px;
+    font-size: 20px;
+    background: cornflowerblue;
+    text-align: center;
+  }
+  
+
+#winsText{
+  margin-left: 650px;
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 20px;
+  background: cornflowerblue;
+  text-align: center;
+
 }
-#totalScore {
-  color: white;
-  background: lightblue;
-  width: 155px;
-  padding: 1%;
+#wins{
+  margin-left: 650px;
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 20px;
+  background: cornflowerblue;
+  text-align: center;
+  
 }
-#scoreTotal  {
-  color: white;
-  background: lightblue;
-  width: 155px;
-  padding: 5%;
+#lossesText{
+  margin-left: 650px;
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 20px;
+  background: cornflowerblue;
+  text-align: center;
+ 
 }
+#losses{
+  margin-left: 650px;
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 20px;
+  background: cornflowerblue;
+  text-align: center;
+ 
+}
+
+
