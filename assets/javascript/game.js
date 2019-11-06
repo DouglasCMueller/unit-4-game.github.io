@@ -1,89 +1,77 @@
 $(document).ready(function() {
-
-    //Variables defined
-var randomNumber = 0;
-var randomValueOfCrystal = 0;
-var randomValueOfCrystalArray = [];
-
+//Variables defined
+var randomValueOfGemArray = [];
 var wins = 0;
 var losses = 0;
-
+var scoreTotal = 0;
 var gemsArray =[
-    {name: "ruby", image: "assets/images/ruby.jpg" },
+    {name: "ruby", image: "assets/images/ruby.jpg"},
     {name: "diamond", image:"assets/images/diamond.jpg"},
     {name: "sapphire", image:"assets/images/sapphire.jpg"},
     {name: "emerald", image:"assets/images/emerald.jpg"},
 ];
-var scoreTotal = 0;
-
+//define reset
+var resetButton = $('.reset');
 function reset(){
-    var randomNumber = 0;
-var randomValueOfCrystal = 0;
-var randomValueOfCrystalArray = [];
-var gemsArray =[
+    var randomValueOfGemArray = [];
+    var scoreTotal = 0;
+    var gemsArray =[
     {name: "ruby", image: "assets/images/ruby.jpg" },
     {name: "diamond", image:"assets/images/diamond.jpg"},
     {name: "sapphire", image:"assets/images/sapphire.jpg"},
     {name: "emerald", image:"assets/images/emerald.jpg"},
 ];
-var scoreTotal = 0;
-console.log(scoreTotal);
+//start reset function on reset button click, then restart game
+resetButton.on('click', reset);
+startGame();
 }
+//define startGame
 function startGame(){
     $("#wins").text(wins);
     $("#losses").text(losses);
-
-$("#scoreTotal").text(scoreTotal);
-console.log(gemsArray[0].image);
-//generate random number between 19-120
-var randomNumber = (Math.floor(Math.random() * (120 - 19 + 1)) + 19);
-console.log (randomNumber);
-$("#randomNumberDisplayed1").text(randomNumber);
-//make an array of the 4 random #s
-for (var i = 0; i < 4; i++){
- 
-var randomValueOfCrystal = (Math.floor(Math.random() * (12 - 1 + 1)) + 1);
-console.log(randomValueOfCrystal);
-
-    randomValueOfCrystalArray.push(randomValueOfCrystal);
-    console.log (randomValueOfCrystalArray);
+    $("#scoreTotal").text(scoreTotal);
+    //generate random number between 19-120
+    var randomNumber = (Math.floor(Math.random() * (120 - 19 + 1)) + 19);
+    $("#randomNumberDisplayed1").text(randomNumber);
+    //make an array of the 4 random #s
+    for (var i = 0; i < 4; i++){
+    var randomValueOfGem = (Math.floor(Math.random() * (12 - 1 + 1)) + 1);
+    randomValueOfGemArray.push(randomValueOfGem);
 }
-for (var j = 0; j < randomValueOfCrystalArray.length; j++){
+//creating gems
+for (var j = 0; j < randomValueOfGemArray.length; j++){
+    //create gem image
     var gemImage = $("<img>");
+    //add class to each image
     gemImage.addClass("gemImageClass");
+    //add attibute to image from gemsArray
     gemImage.attr("src",gemsArray[j].image);
-    gemImage.attr("dataGemValue",randomValueOfCrystalArray[j]);
+    //add attribute and assign random value to each gem
+    gemImage.attr("dataGemValue",randomValueOfGemArray[j]);
+    //display gems
     $("#gems").append(gemImage);
-    console.log(gemImage);
-    console.log(j);
 }
-
+//enable click on each gem
 $(".gemImageClass").on("click", function(){
-var gemValue = ($(this).attr("dataGemValue"));
-gemValue = parseInt(gemValue);
-console.log(gemValue);
-scoreTotal += gemValue;
-$("#scoreTotal").text(scoreTotal);
+    //store value of each gem
+    var gemValue = ($(this).attr("dataGemValue"));
+    //assign numeric value to gem
+    gemValue = parseInt(gemValue);
+    scoreTotal += gemValue;
+    $("#scoreTotal").text(scoreTotal);
+    //define win or lose
 if (scoreTotal === randomNumber) {
     $("#scoreTotal").text(scoreTotal);
     wins++;
-    console.log(wins);
     $("#wins").text(wins);
-     alert("You win!");
-    
-  }
-
-  else if (scoreTotal >= randomNumber) {
+    alert("You win!");
+}
+else if (scoreTotal >= randomNumber) {
     $("#scoreTotal").text(scoreTotal);
     losses++;
     $("#losses").text(losses);
-    console.log(losses);
-    // reset();
-     alert("You lose!!");
- 
-  }
-
-
+    alert("You lose!!");
+}
 });
 }
 startGame();
