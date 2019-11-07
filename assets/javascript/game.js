@@ -11,18 +11,20 @@ var gemsArray =[
     {name: "emerald", image:"assets/images/emerald.jpg"},
 ];
 //define reset
-var resetButton = $('.reset');
+var resetButton = $('.resetButton');
+//start reset function on reset button click, then restart game
+resetButton.on('click', reset);
+
 function reset(){
-    var randomValueOfGemArray = [];
-    var scoreTotal = 0;
-    var gemsArray =[
+    $("#gems").empty();
+    randomValueOfGemArray = [];
+    scoreTotal = 0;
+    gemsArray =[
     {name: "ruby", image: "assets/images/ruby.jpg" },
     {name: "diamond", image:"assets/images/diamond.jpg"},
     {name: "sapphire", image:"assets/images/sapphire.jpg"},
-    {name: "emerald", image:"assets/images/emerald.jpg"},
+    {name: "emerald", image:"assets/images/emerald.jpg"}
 ];
-//start reset function on reset button click, then restart game
-resetButton.on('click', reset);
 startGame();
 }
 //define startGame
@@ -70,7 +72,11 @@ else if (scoreTotal >= randomNumber) {
     $("#scoreTotal").text(scoreTotal);
     losses++;
     $("#losses").text(losses);
-    alert("You lose!!");
+
+    setTimeout(function() {
+        alert("You lose!!");
+    }, 250);
+    
 }
 });
 }
