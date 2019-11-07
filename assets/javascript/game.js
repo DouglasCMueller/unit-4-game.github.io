@@ -12,7 +12,7 @@ var gemsArray =[
 ];
 //define reset
 var resetButton = $('.resetButton');
-//start reset function on reset button click, then restart game
+//start reset function on reset button click
 resetButton.on('click', reset);
 
 function reset(){
@@ -66,7 +66,9 @@ if (scoreTotal === randomNumber) {
     $("#scoreTotal").text(scoreTotal);
     wins++;
     $("#wins").text(wins);
-    alert("You win!");
+    setTimeout(function() {
+        alert("You win!!");
+    }, 250);
 }
 else if (scoreTotal >= randomNumber) {
     $("#scoreTotal").text(scoreTotal);
@@ -76,7 +78,6 @@ else if (scoreTotal >= randomNumber) {
     setTimeout(function() {
         alert("You lose!!");
     }, 250);
-    
 }
 });
 }
